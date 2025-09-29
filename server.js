@@ -107,6 +107,19 @@ app.use((error, req, res, next) => {
     message: 'Internal server error'
   });
 });
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Backend server is running 🚀",
+    docs: {
+      health: "/api/health",
+      auth: "/api/auth",
+      videos: "/api/videos",
+      blogs: "/api/blogs"
+    }
+  });
+});
+
 
 // 404 handler
 app.use('*', (req, res) => {
