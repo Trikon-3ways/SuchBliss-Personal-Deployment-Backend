@@ -68,18 +68,5 @@ app.use('*', (req, res) => {
   });
 });
 
-// Initialize database connection
-async function initializeDatabase() {
-  try {
-    await database.connect();
-    console.log('Database connected successfully');
-  } catch (error) {
-    console.error('Database connection failed:', error);
-  }
-}
-
-// Initialize database on startup
-initializeDatabase();
-
 // Export the app for Vercel
 module.exports = app;
